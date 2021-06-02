@@ -1,5 +1,5 @@
-<div align="center">
-  <img src="https://github.com/no-shot/utils/blob/main/noshotLogo.png?raw=true" width="350px">
+<div align="center" style="margin: 20px 0;">
+  <img src="https://github.com/no-shot/utils/blob/main/noshotLogo.png?raw=true" width="450px">
 </div>
 
 <p align="center">
