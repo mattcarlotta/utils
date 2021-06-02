@@ -85,6 +85,7 @@
     "@babel/preset-env": "^7.14.4",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@types/enzyme": "^3.10.8",
     "@types/jest": "^26.0.23",
     "@types/jsdom": "^16.2.10",

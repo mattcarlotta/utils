@@ -3,7 +3,21 @@ import { minify } from "terser";
 import type { MinifyOptions } from "terser";
 import fileExists from "../fileExists";
 import getFilePath from "../getFilePath";
-import terserOptions from "../terser.config.json";
+
+const terserOptions = {
+  compress: {
+    warnings: false,
+    comparisons: false,
+    inline: 2
+  },
+  mangle: {
+    safari10: true
+  },
+  output: {
+    comments: false,
+    ascii_only: true
+  }
+};
 
 /**
  * A utility function to compress a list of files.
