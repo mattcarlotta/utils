@@ -1,0 +1,124 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "Helpful utilities for projects.",
+  "main": "index.js",
+  "module": "esm/index.mjs",
+  "sideEffects": false,
+  "homepage": "https://github.com/no-shot/utils",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "compressFiles/index.js",
+    "compressFiles/index.d.ts",
+    "fileExists/index.js",
+    "fileExists/index.d.ts",
+    "getFilePath/index.js",
+    "getFilePath/index.d.ts",
+    "waitFor/index.js",
+    "waitFor/index.d.ts",
+    "waitForAct/index.js",
+    "waitForAct/index.d.ts",
+    "esm"
+  ],
+  "types": "./index.d.ts",
+  "exports": {
+    ".": "./index.js",
+    "./compressFiles": "./compressFiles/index.js",
+    "./config": "./config/index.js",
+    "./fileExists": "./fileExists/index.js",
+    "./getFilePath": "./getFilePath/index.js",
+    "./waitFor": "./waitFor/index.js",
+    "./waitForAct": "./waitForAct/index.js",
+    "./esm": "./esm/index.mjs",
+    "./esm/compressFiles": "./esm/compressFiles/index.mjs",
+    "./esm/fileExists": "./esm/fileExists/index.mjs",
+    "./esm/getFilePath": "./esm/getFilePath/index.mjs",
+    "./esm/waitFor": "./esm/waitFor/index.mjs",
+    "./esm/waitForAct": "./esm/waitForAct/index.mjs"
+  },
+  "scripts": {
+    "b": " npm run r:b && tsc --p ./ts/tsconfig.cjs.json && ts-node ./utils/compress.ts",
+    "b:esm": "npm run r:esm && rollup -c",
+    "b:types": "npm run r:types && tsc --p ./ts/tsconfig.types.json",
+    "l": "eslint ./ --ext .ts,.js",
+    "l:types": "tsd",
+    "r": "ts-node ./utils/cleanupCJSBuild.ts",
+    "r:all": "npm run r:b && npm run r:esm",
+    "r:b": "npm run r && npm run r:types",
+    "r:esm": "rimraf esm",
+    "r:types": "ts-node ./utils/cleanupTypes.ts",
+    "t": "jest --config ./jest.json",
+    "t:cov": "jest --config ./jest.json --coverage",
+    "t:watch": "jest --config ./jest.json --watchAll"
+  },
+  "tsd": {
+    "directory": "tests",
+    "compilerOptions": {
+      "module": "esnext",
+      "target": "esnext",
+      "baseUrl": ".",
+      "paths": {
+        "@noshot/utils": [
+          "."
+        ]
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:no-shot/utils.git"
+  },
+  "author": "Matt Carlotta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/no-shot/utils/issues"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/enzyme": "^3.10.8",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.1",
+    "@types/react-dom": "^17.0.6",
+    "@types/rimraf": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
+    "babel-jest": "^27.0.2",
+    "browserslist": "^4.16.6",
+    "enzyme": "^3.11.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.1",
+    "jsdom": "^16.6.0",
+    "prettier": "^2.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.50.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^27.0.1",
+    "ts-node": "^10.0.0",
+    "tsd": "^0.16.0",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2",
+    "terser": "^5.7.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0 || ^17.0.0",
+    "react-dom": "^16.0.0 || ^17.0.0"
+  }
+}
