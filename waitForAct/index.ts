@@ -4,7 +4,7 @@ import waitFor from "../waitFor";
 /* istanbul ignore file */
 
 /**
- * A utility helper function for React to wait for an expectation wrapped in `act` to resolve
+ * A utility helper function for ReactDOM to wait for an asynchronous expectation wrapped in `act` to resolve
  *
  * @param callback - a callback function to invoke
  * @param timeout - time to wait before throwing an error

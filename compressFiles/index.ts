@@ -5,9 +5,17 @@ import fileExists from "../fileExists";
 import getFilePath from "../getFilePath";
 import terserOptions from "../terser.config.json";
 
-async function compress(
+/**
+ * A utility function to compress a list of files.
+ *
+ * @param files - an array of string filenames
+ * @param opts - optional terser {@link https://github.com/terser/terser#minify-options `Options`}
+ * @returns a promise
+ * @example ```await compressFiles(["index.ts", "index.d.ts"], opts);```
+ */
+async function compressFiles(
   files: Array<string>,
-  options?: MinifyOptions
+  opts?: MinifyOptions
 ): Promise<void> {
   try {
     for (let i = 0; i < files.length; i += 1) {
@@ -23,7 +31,7 @@ async function compress(
       /* eslint-disable no-await-in-loop */
       const { code } = await minify(
         fs.readFileSync(filePath, { encoding: "utf-8" }),
-        options || terserOptions
+        opts || terserOptions
       );
 
       if (!code)
@@ -38,4 +46,4 @@ async function compress(
   }
 }
 
-export default compress;
+export default compressFiles;

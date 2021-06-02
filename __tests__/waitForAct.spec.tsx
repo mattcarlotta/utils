@@ -12,7 +12,7 @@ const { document } = new JSDOM(
   "<!DOCTYPE html><body><div id='root'></div></body>"
 ).window;
 global.document = document;
-global.window = document.defaultView;
+(global as any).window = document.defaultView;
 
 describe("Wait For Act", () => {
   let wrapper: ReactWrapper;

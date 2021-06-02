@@ -17,6 +17,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
+    "jsx": "preserve",
     "target": "es5"
   },
   "include": ["**/*.ts", "__tests__/waitForAct.spec.tsx"],

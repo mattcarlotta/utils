@@ -1,7 +1,7 @@
 {
   "name": "utils",
   "version": "1.0.0",
-  "description": "Helpful utilities for projects.",
+  "description": "Helpful utility functions for node projects",
   "main": "index.js",
   "module": "esm/index.mjs",
   "sideEffects": false,
@@ -15,6 +15,8 @@
     "fileExists/index.d.ts",
     "getFilePath/index.js",
     "getFilePath/index.d.ts",
+    "removeFiles/index.js",
+    "removeFiles/index.d.ts",
     "waitFor/index.js",
     "waitFor/index.d.ts",
     "waitForAct/index.js",
@@ -25,15 +27,16 @@
   "exports": {
     ".": "./index.js",
     "./compressFiles": "./compressFiles/index.js",
-    "./config": "./config/index.js",
     "./fileExists": "./fileExists/index.js",
     "./getFilePath": "./getFilePath/index.js",
+    "./removeFiles": "./removeFiles/index.js",
     "./waitFor": "./waitFor/index.js",
     "./waitForAct": "./waitForAct/index.js",
     "./esm": "./esm/index.mjs",
     "./esm/compressFiles": "./esm/compressFiles/index.mjs",
     "./esm/fileExists": "./esm/fileExists/index.mjs",
     "./esm/getFilePath": "./esm/getFilePath/index.mjs",
+    "./esm/removeFiles": "./esm/removeFiles/index.mjs",
     "./esm/waitFor": "./esm/waitFor/index.mjs",
     "./esm/waitForAct": "./esm/waitForAct/index.mjs"
   },
@@ -49,8 +52,7 @@
     "r:esm": "rimraf esm",
     "r:types": "ts-node ./utils/cleanupTypes.ts",
     "t": "jest --config ./jest.json",
-    "t:cov": "jest --config ./jest.json --coverage",
-    "t:watch": "jest --config ./jest.json --watchAll"
+    "t:cov": "jest --config ./jest.json --coverage"
   },
   "tsd": {
     "directory": "tests",
@@ -85,6 +87,7 @@
     "@babel/preset-typescript": "^7.13.0",
     "@types/enzyme": "^3.10.8",
     "@types/jest": "^26.0.23",
+    "@types/jsdom": "^16.2.10",
     "@types/node": "^15.6.1",
     "@types/react-dom": "^17.0.6",
     "@types/rimraf": "^3.0.0",

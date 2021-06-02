@@ -1,7 +1,6 @@
 /**
- * A utility helper function for to wait for an expectation to resolve
+ * A utility helper function to wait for an asynchronous expectation to resolve
  *
- * @function waitFor
  * @param callback - a callback function to invoke
  * @param timeout - time to wait before throwing an error
  * @returns promise or error
