@@ -3,6 +3,7 @@ coverage
 examples
 node_modules
 tests
+utils
 .eslintignoreenv
 .eslintrc
 .gitignore
@@ -10,7 +11,6 @@ tests
 .npmrc
 .prettierignore
 .prettierrc
-compress.ts
 jest.json
 tsconfig.build.json
 tsconfig.json
