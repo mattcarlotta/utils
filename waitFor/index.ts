@@ -6,15 +6,14 @@
  * @returns promise or error
  * @example ```await waitFor(() => { expect(a).toEqual(b) });```
  */
-const waitFor = (callback: () => void, timeout = 1000): Promise<any> =>
-  new Promise((resolve, reject) => {
+function waitFor(callback: () => void, timeout = 1000): Promise<void | Error> {
+  return new Promise((resolve, reject) => {
     const startTime = Date.now();
 
     const tick = () => {
       setTimeout(() => {
         try {
-          callback();
-          resolve("");
+          resolve(callback());
         } catch (err) {
           if (Date.now() - startTime > timeout) {
             reject(err);
@@ -27,5 +26,6 @@ const waitFor = (callback: () => void, timeout = 1000): Promise<any> =>
 
     tick();
   });
+}
 
 export default waitFor;

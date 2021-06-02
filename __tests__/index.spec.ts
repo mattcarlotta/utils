@@ -1,5 +1,5 @@
 import {
-  compressFile,
+  compressFiles,
   fileExists,
   getFilePath,
   removeFiles,
@@ -9,7 +9,7 @@ import {
 
 describe("Exports", () => {
   it("should export compressFile", () => {
-    expect(compressFile).toBeDefined();
+    expect(compressFiles).toBeDefined();
   });
   it("should export fileExists", () => {
     expect(fileExists).toBeDefined();

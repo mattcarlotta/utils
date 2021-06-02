@@ -1,4 +1,4 @@
-import compressFile from "./compressFiles";
+import compressFiles from "./compressFiles";
 import fileExists from "./fileExists";
 import getFilePath from "./getFilePath";
 import removeFiles from "./removeFiles";
@@ -6,7 +6,7 @@ import waitFor from "./waitFor";
 import waitForAct from "./waitForAct";
 
 export {
-  compressFile,
+  compressFiles,
   fileExists,
   getFilePath,
   removeFiles,
@@ -15,7 +15,7 @@ export {
 };
 
 const utils = {
-  compressFile,
+  compressFiles,
   fileExists,
   getFilePath,
   removeFiles,

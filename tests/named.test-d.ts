@@ -1,29 +1,15 @@
-// import { expectType } from "tsd";
-// import { assign, config, load, parse } from "@noshot/env";
-// import type { ConfigOptions, ParsedEnvs, ProcessEnv } from "@noshot/env";
+import { expectType } from "tsd";
+import { compressFiles, fileExists, getFilePath, removeFiles, waitFor, waitForAct } from "@noshot/utils";
 
-// const env = config();
-// expectType<string>(env.parsed["ROOT"]);
-
-// const { parsed, extracted } = config({
-//   dir: "tests",
-//   paths: ".env-example",
-//   encoding: "utf8",
-//   debug: true
-// });
-
-// expectType<ProcessEnv>(parsed);
-// expectType<string>(parsed["BASE"]);
-// expectType<ParsedEnvs>(extracted);
-// expectType<string>(extracted["BASE"]);
-
-// expectType<ConfigOptions>(load("test"));
-// const envConfig = load("test");
-// expectType<ConfigOptions>(envConfig);
-// expectType<string>(envConfig["dir"] as string);
-
-// expectType<ParsedEnvs>(parse("NODE_ENV=production\nDB_HOST=a.b.c"));
-
-// const parsedEnvs = parse(Buffer.from("JUSTICE=league\n"));
-// expectType<ParsedEnvs>(parsedEnvs);
-// expectType<ProcessEnv>(assign(parsedEnvs))
+(async () => {
+  expectType<void>(await compressFiles(["tests/hello.js"]));
+  expectType<boolean>(fileExists("tests/hello.js"));
+  expectType<string>(getFilePath("hello.js", "tests"));
+  expectType<void>(await removeFiles(["tests/hello.js"]));
+  expectType<void | Error>(await waitFor(() => {
+    console.log("expectation")
+  }))
+  expectType<undefined>(await waitForAct(() => {
+    console.log("expectation")
+  }))
+})()

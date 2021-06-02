@@ -11,9 +11,8 @@ import waitFor from "../waitFor";
  * @returns promise or error
  * @example ```await waitFor(() => { expect(a).toEqual(b) });```
  */
-const waitForAct = (
-  callback: () => void,
-  timeout = 1000
-): Promise<void> | Error => act(() => waitFor(callback, timeout));
+function waitForAct(callback: () => void, timeout = 1000): Promise<undefined> {
+  return act(() => waitFor(callback, timeout) as Promise<undefined>);
+}
 
 export default waitForAct;
