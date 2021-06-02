@@ -1,7 +1,5 @@
 import typescript from "rollup-plugin-typescript2";
 import { terser } from "rollup-plugin-terser";
-import json from "@rollup/plugin-json";
-import terserOptions from "./terser.config.json";
 
 const terserOptions = {
   compress: {
@@ -34,7 +32,6 @@ export default [
       "terser"
     ],
     plugins: [
-      json(),
       typescript({ tsconfig: "./ts/tsconfig.esm.json" }),
       terser(terserOptions)
     ]
