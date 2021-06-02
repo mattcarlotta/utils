@@ -5,7 +5,7 @@
   "main": "index.js",
   "module": "esm/index.mjs",
   "sideEffects": false,
-  "homepage": "https://github.com/no-shot/utils",
+  "homepage": "https://github.com/no-shot/utils#readme",
   "files": [
     "index.js",
     "index.d.ts",
