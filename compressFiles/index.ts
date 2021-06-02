@@ -1,4 +1,4 @@
-import fs from "fs";
+import { readFileSync, writeFileSync } from "fs";
 import { minify } from "terser";
 import type { MinifyOptions } from "terser";
 import fileExists from "../fileExists";
@@ -30,7 +30,7 @@ async function compressFiles(
 
       /* eslint-disable no-await-in-loop */
       const { code } = await minify(
-        fs.readFileSync(filePath, { encoding: "utf-8" }),
+        readFileSync(filePath, { encoding: "utf-8" }),
         opts || terserOptions
       );
 
@@ -39,7 +39,7 @@ async function compressFiles(
           `Unable to minify ${file}. No minified code was returned from terser!`
         );
 
-      fs.writeFileSync(filePath, code, { encoding: "utf-8" });
+      writeFileSync(filePath, code, { encoding: "utf-8" });
     }
   } catch (error) {
     throw Error(error);

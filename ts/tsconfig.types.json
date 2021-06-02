@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "emitDeclarationOnly": true,
-    "declaration": true
+    "esModuleInterop": true,
+    "declaration": true,
+    "resolveJsonModule": true
   },
   "include": ["../*.ts"],
   "exclude": [
