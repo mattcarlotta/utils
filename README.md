@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/codecov/c/github/no-shot/utils?style=for-the-badge&labelColor=000000">
   </a>
   <a href="https://github.com/no-shot/utils/blob/master/LICENSE">
-    <img src="https://img.shields.io/npm/l/utils.svg?style=for-the-badge&labelColor=000000">
+    <img src="https://img.shields.io/npm/l/@noshot/utils.svg?style=for-the-badge&labelColor=000000">
   </a>
   <a href="https://www.npmjs.com/package/@noshot/utils">
     <img src="https://img.shields.io/npm/dm/@noshot/utils?style=for-the-badge&labelColor=000000">
