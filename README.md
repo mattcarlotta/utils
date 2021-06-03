@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@noshot/utils">
-    <img src="https://img.shields.io/npm/v/no-shot/utils.svg?style=for-the-badge&labelColor=000000">
+    <img src="https://img.shields.io/npm/v/@noshot/utils.svg?style=for-the-badge&labelColor=000000">
   </a>
   <a href="https://github.com/no-shot/utils/actions?query=workflow%3A%22Publish+Workflow%22">
     <img src="https://img.shields.io/github/workflow/status/no-shot/utils/Publish%20Workflow?style=for-the-badge&labelColor=000000">
@@ -163,7 +163,7 @@ import { removeFiles } from "@noshot/utils";
 
 ### waitFor
 
-This **asynchronous** function waits for an asynchronous expectation to resolve.
+This **asynchronous** function waits for promisified expectations to resolve. It works by trying to resolve the callback every 50ms within the specified timeout; otherwise, it rejects the promise by throwing an error. Useful for tests that may take an unknown amount of time to resolve.
 
 Dependencies: (none if using node v12+)
 
@@ -187,7 +187,7 @@ it("waits for an asynchronous expectation to succeed", async () => {
 
 ### waitForAct
 
-This **asynchronous** function utilizes [ReactDOM](https://www.npmjs.com/package/react-dom) to wait for an asynchronous expectation wrapped in `act` to resolve. This function should work any testing suite, as long as it supports resolving promises.
+This **asynchronous** function utilizes [ReactDOM](https://www.npmjs.com/package/react-dom) to wait for promisified expectations wrapped in `act` to resolve. It works by trying to resolve the callback every 50ms within the specified timeout; otherwise, it rejects the promise by throwing an error. Useful for **React** tests where expectations may take an unknown amount of time to resolve. This function should work with any testing suite, as long as it supports resolving promises.
 
 Dependencies: React, ReactDOM
 
@@ -216,11 +216,12 @@ it("waits for an asynchronous expectation to succeed", async () => {
 
 ### ESM Support
 
-As of Node v12.17.0+, node removed the experimental flag for ES modules. Unfortunately, most of development world has yet to adopt ESM as the standard. Therefore, until there's more widespread support, this documentation will caution against using ESM and instead opt for CJS. In addition, node doesn't support preloading ESM, since it utilizes Node's require function. That said, this package offers experimental support for ESM. You can try it out by importing from the `esm` directory of the package:
+As of Node v12.17.0+, node removed the experimental flag for ES modules. Unfortunately, most of development world has yet to adopt ESM as the standard. Therefore, until there's more widespread support, this documentation will caution against using ESM and instead opt for CJS. In addition, node doesn't support preloading ESM, since preloading utilizes Node's `require` function. That said, this package offers experimental support for ESM. You can try it out by importing from the `esm` directory of the package:
 
 ```ts
 import utils from "@noshot/utils/esm";
 // import { compressFiles, fileExists, getFilePath, ...etc } from "@noshot/utils/esm";
+// import compressFiles from "@noshot/utils/esm/compressFiles";
 ```
 
 ## Contributing Guide

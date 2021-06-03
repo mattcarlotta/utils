@@ -1,10 +1,11 @@
 {
   "name": "@noshot/utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helpful utility functions for node projects",
   "main": "index.js",
   "module": "esm/index.mjs",
   "sideEffects": false,
+  "private": true,
   "homepage": "https://github.com/no-shot/utils#readme",
   "files": [
     "index.js",
