@@ -187,7 +187,7 @@ it("waits for an asynchronous expectation to succeed", async () => {
 
 ### waitForAct
 
-This **asynchronous** function utilizes [ReactDOM](https://www.npmjs.com/package/react-dom) to wait for promisified expectations wrapped in `act` to resolve. It works by trying to resolve the callback every 50ms within the specified timeout; otherwise, it rejects the promise by throwing an error. Useful for **React** tests where expectations may take an unknown amount of time to resolve. This function should work with any testing suite, as long as it supports resolving promises.
+This **asynchronous** function utilizes [ReactDOM](https://www.npmjs.com/package/react-dom) to wait for promisified expectations wrapped in `act` to resolve. It works by trying to resolve the callback every 50ms within the specified timeout; otherwise, it rejects the promise by throwing an error. Useful for **React** tests where expectations may take an unknown amount of time to resolve. This function should work with any testing suite.
 
 Dependencies: React, ReactDOM
 
@@ -209,6 +209,7 @@ const wrapper = mount(<Example />);
 
 it("waits for an asynchronous expectation to succeed", async () => {
   await waitForAct(() => {
+    wrapper.update();
     expect(wrapper.find(".example").exists()).toBeTruthy();
   });
 });
